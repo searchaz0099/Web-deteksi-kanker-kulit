@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Detector</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="mb-4">Cancer Detector</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <video id="video" width="100%" height="auto" autoplay class="mb-3"></video>
+                <button id="capture" class="btn btn-primary">Capture</button>
+            </div>
+
+            <div class="col-md-6">
+                <!-- Ubah ukuran canvas sesuai dengan video -->
+                <canvas id="canvas" class="mb-3"></canvas>
+                <form action="/predict" method="post" style="display:none; margin-top: 10px;" id="predict-form">
+                    <input type="hidden" name="image_data" id="image_data">
+                    <button type="submit" class="btn btn-success">Predict</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var video = document.getElementById('video');
+            var captureButton = document.getElementById('capture');
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+    
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    // Assign the stream to the video element
+                    video.srcObject = stream;
+    
+                    // Ensure that the video is loaded before setting up the capture
+                    video.onloadedmetadata = function () {
+                        // Set up the canvas size based on the video dimensions
+                        canvas.width = video.videoWidth;
+                        canvas.height = video.videoHeight;
+    
+                        // Enable the capture button
+                        captureButton.addEventListener('click', function () {
+                            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                            var imageData = canvas.toDataURL('image/jpeg');
+                            document.getElementById('image_data').value = imageData;
+                            document.getElementById('predict-form').style.display = 'block';
+                        });
+                    };
+                })
+                .catch(function (err) {
+                    console.log("An error occurred: " + err);
+                });
+        });
+    </script>
+    
+</body>
+</html>

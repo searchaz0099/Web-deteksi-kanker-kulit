@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            font-family: 'Arial', sans-serif;
+            padding: 50 px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        p {
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #28a745;
+        }
+
+        .description {
+            text-align: left;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .more-info-btn {
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Result</h1>
+        <p>Predicted Class: {{ predicted_class }}</p>
+        <p>Accuracy: {{ confidence }}</p>
+        <!-- <div class="description">
+            <h3>Description:</h3>
+            <p>
+                {% if predicted_class|lower == 'actinic keratosis' %}
+                <div class="container">
+                    <div class="description">
+                        <p>
+                            Actinic keratosis (AK), atau keratosis aktinik, adalah kondisi kulit yang ditandai oleh pertumbuhan kulit yang kasar dan bersisik akibat paparan sinar matahari berlebihan. Muncul sebagai bercak merah, kasar, atau bersisik di daerah yang sering terpapar sinar matahari.
+                        </p>
+                        <a href="/ak" class="more-info-btn">View More</a>
+                    </div>
+                </div>
+                {% elif predicted_class|lower == 'basal cell carcinoma' %}
+                <div class="container">
+                    <div class="description">
+                        <p>
+                            Melanoma adalah jenis kanker kulit yang berasal dari sel melanosit, yang bertanggung jawab untuk produksi pigmen melanin. Melanin memberikan warna pada kulit, rambut, dan mata. Sel melanosit terletak di epidermis, lapisan terluar kulit.
+                        </p>
+                        <a href="/bcc" class="more-info-btn">View More</a>
+                    </div>
+                </div>
+                {% elif predicted_class|lower == 'benign keratosis' %}
+                <div class="container">
+                    <div class="description">
+                        <p>
+                            Melanoma adalah jenis kanker kulit yang berasal dari sel melanosit, yang bertanggung jawab untuk produksi pigmen melanin. Melanin memberikan warna pada kulit, rambut, dan mata. Sel melanosit terletak di epidermis, lapisan terluar kulit.
+                        </p>
+                        <a href="/bk" class="more-info-btn">View More</a>
+                    </div>
+                </div>
+                {% elif predicted_class|lower == 'dermatofibroma' %}
+                <div class="container">
+                    <div class="description">
+                        <p>
+                            Melanoma adalah jenis kanker kulit yang berasal dari sel melanosit, yang bertanggung jawab untuk produksi pigmen melanin. Melanin memberikan warna pada kulit, rambut, dan mata. Sel melanosit terletak di epidermis, lapisan terluar kulit.
+                        </p>
+                        <a href="/derma" class="more-info-btn">View More</a>
+                    </div>
+                </div>
+                {% elif predicted_class|lower == 'melanocytic nevi' %}
+                <div class="container">
+                    <div class="description">
+                        <p>
+                            Melanoma adalah jenis kanker kulit yang berasal dari sel melanosit, yang bertanggung jawab untuk produksi pigmen melanin. Melanin memberikan warna pada kulit, rambut, dan mata. Sel melanosit terletak di epidermis, lapisan terluar kulit.
+                        </p>
+                        <a href="/mn" class="more-info-btn">View More</a>
+                    </div>
+                </div>
+                {% elif predicted_class|lower == 'melanoma' %}
+                <div class="container">
+                    <div class="description">
+                        <p>
+                            Melanoma adalah jenis kanker kulit yang berasal dari sel melanosit, yang bertanggung jawab untuk produksi pigmen melanin. Melanin memberikan warna pada kulit, rambut, dan mata. Sel melanosit terletak di epidermis, lapisan terluar kulit.
+                        </p>
+                        <a href="/melanoma" class="more-info-btn">View More</a>
+                    </div>
+                </div>
+                {% elif predicted_class|lower == 'vascular lesion' %}
+                <div class="container">
+                    <div class="description">
+                        <p>
+                            Melanoma adalah jenis kanker kulit yang berasal dari sel melanosit, yang bertanggung jawab untuk produksi pigmen melanin. Melanin memberikan warna pada kulit, rambut, dan mata. Sel melanosit terletak di epidermis, lapisan terluar kulit.
+                        </p>
+                        <a href="/vl" class="more-info-btn">View More</a>
+                    </div>
+                </div>
+                {% else %}
+                    Jenis kanker <strong>{{ predicted_class }}</strong> tidak dikenali.
+                {% endif %}
+            </p>
+        </div> -->
+        <center>
+        <a href="/start" class="btn btn-success mt-3">Go back</a>
+        <a href="/" class="btn btn-success mt-3">Home</a>
+        </center>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

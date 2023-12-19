@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melanoma - Informasi Lengkap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #007bff;
+        }
+
+        p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .img-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Melanoma - Informasi Lengkap</h1>
+        <center>
+        <div class="row" >
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='img/melanoma.jpg') }}" alt="Gambar Melanoma" class="img-fluid mt-3" style="height: 350px; width: 400px;">
+            </div>
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='img/melanoma2.jpeg') }}" alt="Gambar Melanoma" class="img-fluid mt-3" style="height: 350px; width: 400px;">
+            </div>
+        </div>
+        </center>
+        <h2>Pengertian Melanoma</h2>
+        <p>
+            Melanoma adalah jenis kanker kulit yang berasal dari sel melanosit, yang bertanggung jawab untuk produksi pigmen melanin. Kanker ini dapat muncul pada tahi lalat atau sebagai lesi baru pada kulit.
+        </p>
+
+        <h2>Penyebab Melanoma</h2>
+        <p>
+            Penyebab utama melanoma adalah paparan sinar ultraviolet (UV) dari matahari atau lampu UV. Faktor risiko lainnya termasuk riwayat paparan sinar matahari berlebihan, riwayat tahi lalat atipikal, dan faktor genetik.
+        </p>
+
+        <h2>Ciri-ciri Melanoma</h2>
+        <p>
+            Melanoma dapat dikenali dengan menggunakan aturan ABCDE:
+        </p>
+        <ul>
+            <li><strong>Asimetri:</strong> Lesi melanoma sering tidak simetris.</li>
+            <li><strong>Batas:</strong> Batas melanoma mungkin bergerigi atau tidak teratur.</li>
+            <li><strong>Warna:</strong> Melanoma sering memiliki perubahan warna atau campuran warna pada satu lesi.</li>
+            <li><strong>Diameter:</strong> Lesi melanoma cenderung lebih besar dari tahi lalat normal.</li>
+            <li><strong>Evolusi:</strong> Perubahan ukuran, bentuk, atau warna pada suatu lesi.</li>
+        </ul>
+
+        <h2>Penanganan Melanoma</h2>
+        <p>
+            Penanganan melanoma melibatkan berbagai metode, tergantung pada stadium dan karakteristik individu pasien. Beberapa metode penanganan termasuk:
+        </p>
+        <ul>
+            <li><strong>Pembedahan:</strong> Pengangkatan melanoma dan mungkin juga jaringan sekitarnya.</li>
+            <li><strong>Terapi Target:</strong> Penggunaan obat yang ditargetkan pada sel-sel kanker.</li>
+            <li><strong>Kemoterapi:</strong> Penggunaan obat-obatan kanker.</li>
+            <li><strong>Imunoterapi:</strong> Stimulasi sistem kekebalan tubuh untuk melawan kanker.</li>
+        </ul>
+
+        <p>
+            Penting untuk berkonsultasi dengan dokter atau ahli onkologi untuk diagnosis yang akurat dan rencana pengobatan yang tepat.
+        </p>
+
+        <a href="/start" class="btn btn-success mt-3">Go back</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
